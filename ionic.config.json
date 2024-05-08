@@ -1,13 +1,13 @@
 {
-  "defaultProject": "example-app-angular",
+  "defaultProject": "crystal-burst",
   "projects": {
-    "example-app-angular": {
-      "name": "example-app-angular",
+    "crystal-burst": {
+      "name": "crystal-burst",
       "integrations": {
         "capacitor": {}
       },
       "type": "angular",
-      "root": "apps/example-app-angular"
+      "root": "apps/crystal-burst"
     }
   }
 }

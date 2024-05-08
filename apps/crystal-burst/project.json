@@ -1,0 +1,103 @@
+{
+    "name": "crystal-burst",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/crystal-burst/src",
+    "prefix": "openforge",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/crystal-burst",
+                "index": "apps/crystal-burst/src/index.html",
+                "main": "apps/crystal-burst/src/main.ts",
+                "polyfills": "apps/crystal-burst/src/polyfills.ts",
+                "tsConfig": "apps/crystal-burst/tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
+                "assets": [
+                    "apps/crystal-burst/src/assets",
+                    {
+                        "glob": "**/*.svg",
+                        "input": "node_modules/ionicons/dist/ionicons/svg",
+                        "output": "./svg"
+                    }
+                ],
+                "styles": ["apps/crystal-burst/src/global.scss"],
+                "scripts": []
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "2mb",
+                            "maximumError": "3mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/crystal-burst/src/environments/environment.ts",
+                            "with": "apps/crystal-burst/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "browserTarget": "crystal-burst:build:production"
+                },
+                "development": {
+                    "browserTarget": "crystal-burst:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "crystal-burst:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/crystal-burst/src/**/*.ts", "apps/crystal-burst/src/**/*.html"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/apps/crystal-burst"],
+            "options": {
+                "jestConfig": "apps/crystal-burst/jest.config.ts",
+                "passWithNoTests": true
+            }
+        },
+        "stylelint": {
+            "executor": "nx-stylelint:lint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/crystal-burst/**/*.css", "apps/crystal-burst/**/*.scss"]
+            }
+        }
+    },
+    "tags": []
+}

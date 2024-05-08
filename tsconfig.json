@@ -18,22 +18,22 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@company-name/example-app-angular/ionic/ui-buttons": [
-        "libs/example-app-angular/ionic/ui-buttons/src/index.ts"
+      "@recklanlabs/crystal-burst/ionic/ui-buttons": [
+        "libs/crystal-burst/ionic/ui-buttons/src/index.ts"
       ],
-      "@company-name/example-app-angular/ionic/ui-headers": [
-        "libs/example-app-angular/ionic/ui-headers/src/index.ts"
+      "@recklanlabs/crystal-burst/ionic/ui-headers": [
+        "libs/crystal-burst/ionic/ui-headers/src/index.ts"
       ],
-      "@company-name/example-app-angular/ionic/ui-modals": [
-        "libs/example-app-angular/ionic/ui-modals/src/index.ts"
+      "@recklanlabs/crystal-burst/ionic/ui-modals": [
+        "libs/crystal-burst/ionic/ui-modals/src/index.ts"
       ],
-      "@company-name/example-app-angular/phaser/singleton": [
-        "libs/example-app-angular/phaser/singleton/src/index.ts"
+      "@recklanlabs/crystal-burst/phaser/singleton": [
+        "libs/crystal-burst/phaser/singleton/src/index.ts"
       ],
-      "@company-name/example-app-angular/phaser/ui-modals": [
-        "libs/example-app-angular/phaser/ui-modals/src/index.ts"
+      "@recklanlabs/crystal-burst/phaser/ui-modals": [
+        "libs/crystal-burst/phaser/ui-modals/src/index.ts"
       ],
-      "@company-name/shared/data-access-model": [
+      "@recklanlabs/shared/data-access-model": [
         "libs/shared/data-access-model/src/index.ts"
       ]
     }

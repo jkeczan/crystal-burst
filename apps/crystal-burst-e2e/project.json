@@ -1,0 +1,29 @@
+{
+    "name": "crystal-burst-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/crystal-burst-e2e/src",
+    "projectType": "application",
+    "targets": {
+        "e2e": {
+            "executor": "@nrwl/cypress:cypress",
+            "options": {
+                "cypressConfig": "apps/crystal-burst-e2e/cypress.json",
+                "devServerTarget": "crystal-burst:serve:development"
+            },
+            "configurations": {
+                "production": {
+                    "devServerTarget": "crystal-burst:serve:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/crystal-burst-e2e/**/*.{js,ts}"]
+            }
+        }
+    },
+    "tags": [],
+    "implicitDependencies": ["crystal-burst"]
+}
